@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>OCR Document System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>📄 OCR Document System</h1>
+
+    <form action="/ocr" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <button type="submit">Run OCR</button>
+    </form>
+
+    {% if ocr_text %}
+        <h2>📌 OCR Result</h2>
+        <pre>{{ ocr_text }}</pre>
+    {% endif %}
+</body>
+</html>
